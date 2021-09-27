@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <style>
+        textarea {
+            resize: none;
+        }
+
+        html, body {
+            height: 95vh;
+        }
+        @media only screen and (max-width: 1000px) {
+            input,textarea,select,button,a {
+                font-family: 'Rubik', sans-serif;
+                font-size: 1vh;
+            }
+        }@media only screen and (min-width: 1100px) {
+            input,textarea,select,button,a {
+                font-family: 'Rubik', sans-serif;
+                font-size: 2vh;
+            }
+        }
+
+
+        body {
+            /*height: 50em;*/
+            /*width: 100%;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["username"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<a href="/history" style="position:absolute; bottom: 90vh; left: 90vw">Istoric</a>
+<form action="/solution" method="post" onsubmit="return validateForm()" name="myForm">
+    <input type="text" name="username" placeholder="NumePrenume">
+    <select name="exercise">
+        <option value="p1">Exercise1</option>
+        <option value="p2">Exercise2</option>
+        <option value="p3">Exercise3</option>
+        <option value="p4">Exercise4</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <textarea name="source" rows="20" cols="50" placeholder="Sursă"></textarea>
+    <br>
+    <button type="submit">Trimite</button>
+</form>
+</body>
+</html>
